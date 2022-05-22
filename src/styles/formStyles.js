@@ -5,14 +5,14 @@ export const FormContainer = styled.div`
   border: 1px solid rgba(202, 203, 204, 1);
   box-shadow: 3px 3px 11px 0px rgba(0, 0, 0, 0.2);
   min-height: 26rem;
+  margin: 1rem;
   border-radius: 12px;
   font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  padding: 2rem 3rem;
+  padding: 1rem 3rem;
 
   h1{
     font-size: 26px;
@@ -37,6 +37,14 @@ export const FormContainer = styled.div`
 
   label{
     color: rgba(18, 61, 104, 1);
+  }
+
+  @media (min-width: 1280px){
+    gap: .3rem;
+  }
+
+  @media (min-width: 1500px){
+    gap: .8rem;
   }
 `;
 
@@ -88,7 +96,8 @@ export const NewsletterText = styled.span`
   line-height: 1.2rem;
 `;
 
-export const IconContainer = styled.div`
+export const IconContainer = styled.button`
+  background-color: transparent;
   cursor: pointer;
   color: rgba(18, 61, 104, 1);
   position: absolute;

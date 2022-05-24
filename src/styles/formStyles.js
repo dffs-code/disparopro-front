@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const FormContainer = styled.div`
+  background: var(--white);
   width: 26rem;
   border: 1px solid rgba(202, 203, 204, 1);
   box-shadow: 3px 3px 11px 0px rgba(0, 0, 0, 0.2);
@@ -28,17 +29,6 @@ export const FormContainer = styled.div`
     }
   }
 
-  .input{
-    width: 20rem;
-    height: 2.5rem;
-    border-radius: 6px;
-    border: 1px solid  rgba(18, 61, 104, 1);
-  }
-
-  label{
-    color: rgba(18, 61, 104, 1);
-  }
-
   @media (min-width: 1280px){
     gap: .3rem;
   }
@@ -46,6 +36,25 @@ export const FormContainer = styled.div`
   @media (min-width: 1500px){
     gap: .8rem;
   }
+`;
+
+export const Input = styled.input`
+   width: 20rem;
+  height: 2.5rem;
+  border-radius: 6px;
+  border: 1px solid  rgba(18, 61, 104, 1);
+  transition: all .2s ease-in-out;
+  ${({ error }) => error && `
+    border: 1px solid rgba(235, 60, 75, 0.7);
+  `}
+`;
+
+export const Label = styled.label`
+  color: rgba(18, 61, 104, 1);
+  transition: all .2s ease-in-out;
+  ${({ error }) => error && `
+    color: rgba(229, 11, 30, 1);
+  `}
 `;
 
 export const Button = styled.button`
@@ -107,5 +116,63 @@ export const IconContainer = styled.button`
 
   :hover{
     color: #0a2947;
+  }
+`;
+
+export const ErrorBox = styled.div`
+
+  @-webkit-keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-left {
+    0% {
+      -webkit-transform: translateX(-50px);
+              transform: translateX(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  background: #FDEBEC;
+  border: 2px solid #FBDADD;
+  border-radius: 6px;
+  width: 20rem;
+  height: 50px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba(235, 60, 75, 0.7);
+  -webkit-animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-left 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  
+  .lateralBorder{
+    height: 34px;
+    width: 3px;
+    border-radius: 1px;
+    background: rgba(235, 60, 75, 0.7);
+  }
+
+  .icon{
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 5px;
+    background: rgba(235, 60, 75, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
   }
 `;
